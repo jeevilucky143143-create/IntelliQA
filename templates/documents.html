@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Document Management — IntelliQA{% endblock %}
+{% block page_title %}Unstructured Document Corpus{% endblock %}
+
+{% block content %}
+<div class="documents-container">
+    <!-- Top Action Banner -->
+    <div class="card p-4 mb-4">
+        <div class="row-between">
+            <div>
+                <h3><i class="fa-solid fa-folder-open text-primary"></i> Upload New Document</h3>
+                <p class="text-muted">Add text documents (.txt), PDFs (.pdf), or tabular files (.csv) to expand the IR search index.</p>
+            </div>
+            <div>
+                <form id="upload-form" class="upload-inline-form">
+                    <input type="file" id="file-input" accept=".txt,.pdf,.csv" required style="display: none;">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('file-input').click()">
+                        <i class="fa-solid fa-file-arrow-up"></i> Select File
+                    </button>
+                    <span id="file-chosen-name" class="file-name-span">No file chosen</span>
+                    <button type="submit" class="btn btn-primary ml-2">
+                        <i class="fa-solid fa-upload"></i> Upload & Index
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div id="upload-alert" class="alert-box mt-3" style="display: none;"></div>
+    </div>
+
+    <!-- Indexed Documents Table -->
+    <div class="card p-4">
+        <div class="row-between mb-3">
+            <h3><i class="fa-solid fa-list-check"></i> Indexed Documents & Passages</h3>
+            <button class="btn btn-sm btn-outline-secondary" onclick="loadDocuments()">
+                <i class="fa-solid fa-rotate-right"></i> Refresh
+            </button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="data-table" id="documents-table">
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Type</th>
+                        <th>Passages</th>
+                        <th>Size (KB)</th>
+                        <th>Index Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="documents-tbody">
+                    <tr>
+                        <td colspan="6" class="text-center py-4">Loading documents...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/documents.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}IntelliQA — Intelligent Information Retrieval & Knowledge System{% endblock %}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- vis.js Network Graph -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="logo-text">
+                    <h2>IntelliQA</h2>
+                    <span class="logo-subtitle">QA & Chatbot Engine</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="{{ url_for('main.index') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="{{ url_for('qa.chat') }}" class="nav-link {% if request.path == '/chat' %}active{% endif %}">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>QA Chat</span>
+                </a>
+                <a href="{{ url_for('document.documents') }}" class="nav-link {% if request.path == '/documents' %}active{% endif %}">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Documents</span>
+                </a>
+                <a href="{{ url_for('knowledge.knowledge') }}" class="nav-link {% if request.path == '/knowledge' %}active{% endif %}">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Knowledge Base</span>
+                </a>
+                <a href="{{ url_for('knowledge.graph_page') }}" class="nav-link {% if request.path == '/graph' %}active{% endif %}">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Knowledge Graph</span>
+                </a>
+                <a href="{{ url_for('evaluation.evaluation') }}" class="nav-link {% if request.path == '/evaluation' %}active{% endif %}">
+                    <i class="fa-solid fa-vial-circle-check"></i>
+                    <span>Evaluation</span>
+                </a>
+                <a href="{{ url_for('main.dialogue') }}" class="nav-link {% if request.path == '/dialogue' %}active{% endif %}">
+                    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                    <span>Dialogue Flow</span>
+                </a>
+                <a href="{{ url_for('main.about') }}" class="nav-link {% if request.path == '/about' %}active{% endif %}">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About System</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Flask Server Active</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>{% block page_title %}Dashboard{% endblock %}</h1>
+                </div>
+                <div class="header-actions">
+                    <a href="{{ url_for('qa.chat') }}" class="btn btn-accent">
+                        <i class="fa-solid fa-paper-plane"></i> Ask Question
+                    </a>
+                </div>
+            </header>
+
+            <!-- Page Body -->
+            <div class="content-body">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

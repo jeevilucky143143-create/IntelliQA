@@ -1,0 +1,9 @@
+Computer vision is a specialized subfield of artificial intelligence that trains computers to interpret, understand, and extract meaningful information from digital images, videos, and visual inputs.
+
+Core tasks in computer vision include image classification, object detection, semantic segmentation, optical character recognition (OCR), facial recognition, and motion tracking.
+
+Traditional computer vision techniques relied heavily on hand-crafted feature extractors such as SIFT, SURF, and Harris Corner Detection combined with classical machine learning classifiers. The open-source OpenCV library, created by Intel in 2000, popularized these traditional algorithms across software engineering.
+
+Modern computer vision relies predominantly on Convolutional Neural Networks (CNNs) and Vision Transformers (ViT). Deep architectures automatically learn hierarchical feature representations directly from raw pixel data.
+
+Real-time object detection systems like YOLO (You Only Look Once), developed by Joseph Redmon in 2016, treat object detection as a single regression task, enabling high frame-rate processing for autonomous driving, surveillance, and robotics.

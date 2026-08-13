@@ -1,0 +1,11 @@
+Machine learning is a subfield of artificial intelligence focused on building algorithms that learn from data and improve their performance through experience without being explicitly programmed.
+
+The primary paradigms of machine learning are supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled training datasets to learn mappings from inputs to outputs, covering classification and regression tasks.
+
+Unsupervised learning operates on unlabeled datasets to discover underlying patterns, clusters, and latent structures. Popular algorithms include k-means clustering, principal component analysis (PCA), and hierarchical clustering.
+
+Reinforcement learning involves an agent taking actions within an environment to maximize cumulative reward signals. Key algorithms in reinforcement learning include Q-learning, Deep Q-Networks (DQN), and Proximal Policy Optimization (PPO).
+
+Deep learning is a subset of machine learning based on artificial neural networks with representation learning. Deep learning architectures like Convolutional Neural Networks (CNNs) excel at computer vision tasks, whereas Recurrent Neural Networks (RNNs) and Transformers dominate natural language processing.
+
+Evaluation metrics for machine learning models depend on the specific task. Classification tasks utilize accuracy, precision, recall, F1-score, and ROC-AUC curves. Regression models rely on mean squared error (MSE), root mean squared error (RMSE), and mean absolute error (MAE).

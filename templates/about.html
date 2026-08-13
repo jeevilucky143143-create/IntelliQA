@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}About — IntelliQA{% endblock %}
+{% block page_title %}About System & Requirement Traceability{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <!-- Overview Card -->
+    <div class="card p-4 mb-4">
+        <h3><i class="fa-solid fa-graduation-cap text-primary"></i> IntelliQA System Overview</h3>
+        <p>IntelliQA is a complete, working, and polished academic Question Answering (QA) and Chatbot prototype built with Python Flask. The system combines Information Retrieval (IR) over unstructured text, structured Entity-Attribute-Value querying over SQLite/CSV, and multi-turn dialogue context management.</p>
+    </div>
+
+    <!-- Requirement Traceability Table -->
+    <div class="card p-4 mb-4">
+        <h4 class="mb-3"><i class="fa-solid fa-list-check text-success"></i> Academic Requirement Traceability Matrix</h4>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Implementation Details</th>
+                        <th>Source Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. IR-Based Factoid QA</strong></td>
+                        <td>TF-IDF vectorization, Cosine Similarity, passage ranking, and sentence score extraction over text corpus.</td>
+                        <td><code>core/ir_engine.py</code> & <code>core/answer_extractor.py</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Knowledge-Based QA</strong></td>
+                        <td>Structured Entity-Attribute-Value query engine using SQLite database, Pandas CSV, and NetworkX Graph.</td>
+                        <td><code>core/knowledge_engine.py</code> & <code>database/knowledge.db</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Dialogue Management</strong></td>
+                        <td>Session-backed ConversationFrame state tracking entity coreference ("it", "its creator") across turns.</td>
+                        <td><code>core/dialogue_manager.py</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Query Router</strong></td>
+                        <td>Hybrid intent classification routing queries to Greetings, Knowledge Base, Dialogue Context, or IR engine.</td>
+                        <td><code>core/query_router.py</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Answer Quality Evaluation</strong></td>
+                        <td>Computes Exact Match (EM), Precision, Recall, F1 score, and confidence scores across benchmark dataset.</td>
+                        <td><code>core/evaluator.py</code> & <code>data/sample_questions.csv</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Document Upload & Indexing</strong></td>
+                        <td>Allows uploading .txt, .pdf, and .csv files with automatic real-time TF-IDF re-indexing.</td>
+                        <td><code>core/document_loader.py</code> & <code>routes/document_routes.py</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Knowledge Graph Visualization</strong></td>
+                        <td>Renders entity nodes, value nodes, and relationship edges using NetworkX and vis.js interactive graph.</td>
+                        <td><code>routes/knowledge_routes.py</code> & <code>templates/graph.html</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>8. Evaluation Dashboard</strong></td>
+                        <td>Interactive evaluation view displaying performance metrics, Chart.js graphs, and detailed question breakdown.</td>
+                        <td><code>templates/evaluation.html</code> & <code>static/js/evaluation.js</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>9. Working Prototype</strong></td>
+                        <td>Complete Flask web application running 100% locally without mandatory external API requirements.</td>
+                        <td><code>app.py</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Tech Stack Summary -->
+    <div class="card p-4">
+        <h4><i class="fa-solid fa-layer-group text-purple"></i> Technology Stack</h4>
+        <div class="grid-3 mt-3">
+            <div class="tech-box">
+                <strong>Backend & Server</strong>
+                <p>Python 3.9+, Flask 3.1, SQLite, Pandas, NumPy, scikit-learn (TF-IDF), NLTK, NetworkX, PyPDF.</p>
+            </div>
+            <div class="tech-box">
+                <strong>Frontend & Design</strong>
+                <p>HTML5, Modern Pastel CSS (#FAF8F5, #A8DADC, #CDB4DB, #FFC8DD, #FFE5B4, #BDE0C0), JavaScript, Chart.js, vis.js.</p>
+            </div>
+            <div class="tech-box">
+                <strong>Testing & Benchmark</strong>
+                <p>Pytest automated unit test suite, token-level F1/Precision/Recall metric calculators.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

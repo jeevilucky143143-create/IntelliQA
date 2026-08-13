@@ -1,0 +1,9 @@
+Natural Language Processing (NLP) is an interdisciplinary subfield of computer science, artificial intelligence, and linguistics concerned with the interactions between computers and human language.
+
+Key tasks in natural language processing include tokenization, part-of-speech tagging, named entity recognition (NER), sentiment analysis, machine translation, syntactic parsing, and question answering systems.
+
+Traditional NLP methods relied heavily on rule-based systems and statistical language modeling, using techniques such as N-grams, TF-IDF vectorization, Hidden Markov Models, and Naive Bayes classifiers.
+
+Modern NLP utilizes deep learning and transformer architectures. Pretrained language models like BERT, RoBERTa, T5, and GPT have revolutionized NLP by learning contextualized text representations from massive corpora.
+
+Information Retrieval (IR) is closely tied to NLP. IR systems process unstructured document collections, rank passages based on similarity scores like TF-IDF or BM25, and extract precise answers for factoid questions.

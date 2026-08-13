@@ -1,0 +1,51 @@
+question,expected_answer,qa_type,source,difficulty
+Who created Python?,Guido van Rossum,knowledge,knowledge_base.csv,easy
+What type of framework is Flask?,Web Framework,knowledge,knowledge_base.csv,easy
+When was Python released?,1991,knowledge,knowledge_base.csv,easy
+Who created Flask?,Armin Ronacher,knowledge,knowledge_base.csv,easy
+What language is Flask written in?,Python,knowledge,knowledge_base.csv,easy
+What template engine does Flask use?,Jinja2,knowledge,knowledge_base.csv,medium
+What WSGI toolkit does Flask depend on?,Werkzeug,knowledge,knowledge_base.csv,medium
+Who coined the term artificial intelligence?,John McCarthy,knowledge,knowledge_base.csv,medium
+When was artificial intelligence founded?,1956,knowledge,knowledge_base.csv,medium
+What type of library is Scikit-Learn?,Machine Learning Library,knowledge,knowledge_base.csv,easy
+Who created Khan Academy?,Sal Khan,knowledge,knowledge_base.csv,easy
+When was Khan Academy released?,2008,knowledge,knowledge_base.csv,easy
+What type of platform is Coursera?,Online Learning Platform,knowledge,knowledge_base.csv,easy
+Who created Coursera?,Andrew Ng,knowledge,knowledge_base.csv,easy
+When was Harvard University released?,1636,knowledge,knowledge_base.csv,easy
+What type of university is MIT?,Research University,knowledge,knowledge_base.csv,easy
+Who created Bloom's Taxonomy?,Benjamin Bloom,knowledge,knowledge_base.csv,medium
+Who created PyTorch?,Meta AI,knowledge,knowledge_base.csv,easy
+When was PyTorch released?,2016,knowledge,knowledge_base.csv,easy
+Who created TensorFlow?,Google Brain,knowledge,knowledge_base.csv,easy
+Who created BERT?,Google AI,knowledge,knowledge_base.csv,easy
+When was BERT released?,2018,knowledge,knowledge_base.csv,easy
+Who created GPT-4?,OpenAI,knowledge,knowledge_base.csv,easy
+When was GPT-4 released?,2023,knowledge,knowledge_base.csv,easy
+Who created Qiskit?,IBM,knowledge,knowledge_base.csv,easy
+When was Qiskit released?,2017,knowledge,knowledge_base.csv,easy
+Who created OpenCV?,Intel,knowledge,knowledge_base.csv,easy
+When was OpenCV released?,2000,knowledge,knowledge_base.csv,easy
+Who created YOLO?,Joseph Redmon,knowledge,knowledge_base.csv,easy
+Who created Differential Privacy?,Cynthia Dwork,knowledge,knowledge_base.csv,easy
+When was Differential Privacy released?,2006,knowledge,knowledge_base.csv,easy
+Who created Homomorphic Encryption?,Craig Gentry,knowledge,knowledge_base.csv,easy
+When was GDPR released?,2018,knowledge,knowledge_base.csv,easy
+What is artificial intelligence?,"Artificial Intelligence (AI) is a domain of computer science dedicated to building machines capable of performing tasks that typically require human intelligence.",ir,artificial_intelligence.txt,medium
+What is machine learning?,"Machine learning is a subfield of artificial intelligence focused on building algorithms that learn from data and improve their performance through experience without being explicitly programmed.",ir,machine_learning.txt,medium
+What is natural language processing?,"Natural Language Processing (NLP) is an interdisciplinary subfield of computer science, artificial intelligence, and linguistics concerned with the interactions between computers and human language.",ir,natural_language_processing.txt,medium
+What are the primary paradigms of machine learning?,"The primary paradigms of machine learning are supervised learning, unsupervised learning, and reinforcement learning.",ir,machine_learning.txt,medium
+What is quantum computing?,"Quantum computing is a rapidly emerging area of computer science that harnesses the fundamental laws of quantum mechanics to solve complex problems faster than classical supercomputers.",ir,quantum_computing.txt,medium
+What is computer vision?,"Computer vision is a specialized subfield of artificial intelligence that trains computers to interpret, understand, and extract meaningful information from digital images, videos, and visual inputs.",ir,computer_vision.txt,medium
+What is differential privacy?,"Differential privacy, introduced by Cynthia Dwork in 2006, provides a rigorous mathematical framework that allows statistical analysis of large datasets while mathematically guaranteeing that individual user entries cannot be identified.",ir,data_security.txt,medium
+What algorithms dominate natural language processing in deep learning?,"Deep learning architectures like Convolutional Neural Networks (CNNs) excel at computer vision tasks, whereas Recurrent Neural Networks (RNNs) and Transformers dominate natural language processing.",ir,machine_learning.txt,hard
+Hello,"Hello! I'm IntelliQA. I can answer questions using documents, structured knowledge, and conversation context.",dialogue,session,easy
+Hi,"Hi there! How can I assist you with information retrieval or knowledge queries today?",dialogue,session,easy
+Thank you,"You're very welcome! Feel free to ask if you have more questions.",dialogue,session,easy
+Who are you?,"I am IntelliQA, an Intelligent Question Answering & Conversational Assistant powered by Flask.",dialogue,session,easy
+What can you do?,"I can perform IR-based factoid answering from text documents, query structured knowledge databases, and maintain dialogue context across conversational turns.",dialogue,session,easy
+What about its creator?,Python was created by Guido van Rossum.,dialogue,session,medium
+Is it open source?,"Yes, Flask is open source under BSD License.",dialogue,session,medium
+Who won the 1998 World Cup final?,"I couldn't find enough reliable information in the available sources to answer that question.",ir,none,hard
+What is quantum teleportation string theory?,"I couldn't find enough reliable information in the available sources to answer that question.",ir,none,hard

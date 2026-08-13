@@ -1,0 +1,9 @@
+Data security and privacy encompass the policies, processes, mathematical frameworks, and technical safeguards designed to protect digital data from unauthorized access, corruption, disclosure, or theft.
+
+Data privacy focuses on the proper handling, consent, collection, storage, and governance of personal identifiable information (PII). Regulations such as the General Data Protection Regulation (GDPR) in the European Union mandate strict privacy rights and organizational compliance.
+
+Differential privacy, introduced by Cynthia Dwork in 2006, provides a rigorous mathematical framework that allows statistical analysis of large datasets while mathematically guaranteeing that individual user entries cannot be identified.
+
+Homomorphic encryption, first constructed by Craig Gentry in 2009, enables computations to be performed directly on encrypted ciphertexts without requiring prior decryption. This ensures secure cloud computing over sensitive medical and financial data.
+
+Cybersecurity practices include multi-factor authentication, end-to-end encryption protocols like TLS, zero-trust architecture, automated intrusion detection systems, and regular vulnerability auditing.

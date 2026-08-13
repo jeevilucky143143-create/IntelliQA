@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Evaluation Dashboard — IntelliQA{% endblock %}
+{% block page_title %}Answer Quality & Benchmark Evaluation{% endblock %}
+
+{% block content %}
+<div class="evaluation-container">
+    <!-- Header Card -->
+    <div class="card p-4 mb-4">
+        <div class="row-between">
+            <div>
+                <h3><i class="fa-solid fa-vial-circle-check text-success"></i> Academic Benchmark Evaluator</h3>
+                <p class="text-muted">Calculates Exact Match (EM), Precision, Recall, and F1-Score across sample benchmark questions.</p>
+            </div>
+            <div>
+                <button id="btn-run-eval" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-play"></i> Run Benchmark Evaluation
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Metrics Cards Grid -->
+    <div class="stats-grid mb-4">
+        <div class="stat-card pastel-blue">
+            <div class="stat-icon"><i class="fa-solid fa-list-ol"></i></div>
+            <div class="stat-details">
+                <span class="stat-value" id="eval-total">--</span>
+                <span class="stat-label">Total Questions</span>
+            </div>
+        </div>
+
+        <div class="stat-card pastel-green">
+            <div class="stat-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="stat-details">
+                <span class="stat-value" id="eval-em">--%</span>
+                <span class="stat-label">Exact Match (EM)</span>
+            </div>
+        </div>
+
+        <div class="stat-card pastel-purple">
+            <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="stat-details">
+                <span class="stat-value" id="eval-f1">--%</span>
+                <span class="stat-label">F1-Score</span>
+            </div>
+        </div>
+
+        <div class="stat-card pastel-pink">
+            <div class="stat-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="stat-details">
+                <span class="stat-value" id="eval-precision">--%</span>
+                <span class="stat-label">Precision / Recall</span>
+            </div>
+        </div>
+
+        <div class="stat-card pastel-yellow">
+            <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <div class="stat-details">
+                <span class="stat-value" id="eval-conf">--%</span>
+                <span class="stat-label">Avg Confidence</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-row grid-2 mb-4">
+        <div class="card p-4">
+            <h4><i class="fa-solid fa-chart-pie text-accent"></i> QA Mode Distribution</h4>
+            <div class="chart-container mt-3" style="position: relative; height: 260px;">
+                <canvas id="modeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card p-4">
+            <h4><i class="fa-solid fa-chart-column text-primary"></i> Accuracy by QA Engine Mode</h4>
+            <div class="chart-container mt-3" style="position: relative; height: 260px;">
+                <canvas id="accuracyChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Evaluation Results Table -->
+    <div class="card p-4">
+        <h4 class="mb-3"><i class="fa-solid fa-table-list"></i> Evaluation Results Detail</h4>
+        <div class="table-responsive">
+            <table class="data-table" id="eval-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Question</th>
+                        <th>Expected Answer</th>
+                        <th>Predicted Answer</th>
+                        <th>Mode</th>
+                        <th>Exact Match</th>
+                        <th>F1 Score</th>
+                        <th>Confidence</th>
+                    </tr>
+                </thead>
+                <tbody id="eval-tbody">
+                    <tr>
+                        <td colspan="8" class="text-center py-4 text-muted">Click "Run Benchmark Evaluation" above to execute evaluation suite.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/evaluation.js') }}"></script>
+{% endblock %}

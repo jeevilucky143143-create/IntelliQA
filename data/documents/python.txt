@@ -1,0 +1,9 @@
+Python is a high-level, general-purpose, interpreted programming language created by Guido van Rossum and first released in 1991. Python emphasizes code readability with its distinctive use of significant indentation.
+
+Python features a dynamic type system and automatic memory management via garbage collection. It supports multiple programming paradigms, including object-oriented, functional, procedural, and reflective programming styles.
+
+The design philosophy of Python is summarized in the Zen of Python, which emphasizes simplicity, readability, and elegance over complex code constructs.
+
+Python boasts a vast standard library and a rich ecosystem of third-party packages distributed via PyPI. Major data science and machine learning libraries in Python include NumPy, Pandas, Scikit-Learn, PyTorch, and TensorFlow.
+
+Python is widely utilized across web development, scientific computing, data analysis, artificial intelligence, automation scripting, and network programming. Popular web frameworks in Python include Django, Flask, FastAPI, and Pyramid.

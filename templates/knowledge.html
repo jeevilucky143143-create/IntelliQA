@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Knowledge Base — IntelliQA{% endblock %}
+{% block page_title %}Structured Knowledge Base{% endblock %}
+
+{% block content %}
+<div class="knowledge-container">
+    <!-- Header & Search Toolbar -->
+    <div class="card p-4 mb-4">
+        <div class="row-between">
+            <div>
+                <h3><i class="fa-solid fa-database text-purple"></i> Entity-Attribute-Value Store</h3>
+                <p class="text-muted">Structured domain facts stored in SQLite and CSV used for direct knowledge-based QA.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" onclick="openAddModal()">
+                    <i class="fa-solid fa-plus"></i> Add Knowledge Record
+                </button>
+            </div>
+        </div>
+
+        <div class="search-toolbar mt-3">
+            <div class="search-input-group">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="kb-search-input" placeholder="Search entity, attribute, or value..." onkeyup="filterKnowledgeTable()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Records Table -->
+    <div class="card p-4">
+        <div class="table-responsive">
+            <table class="data-table" id="kb-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Entity</th>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                        <th>Category</th>
+                        <th>Source</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="kb-tbody">
+                    <tr>
+                        <td colspan="7" class="text-center py-4">Loading knowledge base records...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Adding New Knowledge Record -->
+<div id="add-kb-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h4><i class="fa-solid fa-cube text-primary"></i> Add Structured Knowledge Record</h4>
+            <button class="close-btn" onclick="closeAddModal()">&times;</button>
+        </div>
+        <form id="add-kb-form">
+            <div class="modal-body">
+                <div class="form-group mb-3">
+                    <label>Entity Name <span class="text-danger">*</span></label>
+                    <input type="text" id="kb-entity" class="form-control" placeholder="e.g. Python, Flask, AI" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Attribute <span class="text-danger">*</span></label>
+                    <input type="text" id="kb-attribute" class="form-control" placeholder="e.g. creator, type, release_year" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Value <span class="text-danger">*</span></label>
+                    <input type="text" id="kb-value" class="form-control" placeholder="e.g. Guido van Rossum, Web Framework, 1991" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col mb-3">
+                        <label>Category</label>
+                        <input type="text" id="kb-category" class="form-control" placeholder="e.g. Technology, Project">
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Description / Context</label>
+                    <textarea id="kb-description" class="form-control" rows="2" placeholder="Optional context summary..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Record</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/knowledge.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+Flask is a micro web framework written in Python. It was created by Armin Ronacher as part of the Pocoo group of Python enthusiasts and first released in 2010.
+
+Flask is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or third-party components where pre-existing third-party libraries provide common functions.
+
+However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies, and several common framework-related tools.
+
+Flask depends on the Werkzeug WSGI toolkit and the Jinja2 template engine. Werkzeug handles routing, request processing, and HTTP utilities, while Jinja2 enables dynamic HTML template rendering.
+
+Applications that use Flask include Pinterest, LinkedIn, Netflix, and Reddit for internal microservices and web APIs. Flask is praised for its simplicity, flexibility, granular control, and low learning curve for web developers.

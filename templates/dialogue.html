@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Dialogue Flow — IntelliQA{% endblock %}
+{% block page_title %}Dialogue Management & Frame Architecture{% endblock %}
+
+{% block content %}
+<div class="dialogue-container">
+    <!-- Architecture Summary Header -->
+    <div class="card p-4 mb-4">
+        <h3><i class="fa-solid fa-arrows-split-up-and-left text-pink"></i> Dialogue Frame Architecture</h3>
+        <p class="text-muted">IntelliQA maintains conversational context using a lightweight <strong>ConversationFrame</strong> structure stored within Flask sessions. This allows coreference resolution across multiple turns without needing complex LLMs.</p>
+    </div>
+
+    <!-- Flowchart Card -->
+    <div class="card p-4 mb-4">
+        <h4 class="mb-3"><i class="fa-solid fa-diagram-next"></i> Multi-Turn Dialogue Execution Pipeline</h4>
+        
+        <div class="flow-diagram-wrapper">
+            <div class="flow-step">
+                <div class="step-num">1</div>
+                <div class="step-box">
+                    <strong>USER QUERY</strong>
+                    <span>"Who created Python?" / "Who created it?"</span>
+                </div>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+            
+            <div class="flow-step">
+                <div class="step-num">2</div>
+                <div class="step-box">
+                    <strong>QUERY ROUTER</strong>
+                    <span>Detect intent: Greeting, KB, Dialogue Follow-up, or IR</span>
+                </div>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <div class="flow-step">
+                <div class="step-num">3</div>
+                <div class="step-box">
+                    <strong>CONTEXT RESOLUTION</strong>
+                    <span>Substitute pronouns ("it" &rarr; "Python") using Session Frame</span>
+                </div>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <div class="flow-step">
+                <div class="step-num">4</div>
+                <div class="step-box">
+                    <strong>QA ENGINE EXECUTION</strong>
+                    <span>Execute Knowledge Query / IR Passage Search</span>
+                </div>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <div class="flow-step">
+                <div class="step-num">5</div>
+                <div class="step-box">
+                    <strong>FRAME CONTEXT UPDATE</strong>
+                    <span>Store active entity ("Python"), question, and answer in Session</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frame Structure Documentation -->
+    <div class="grid-2">
+        <div class="card p-4">
+            <h4><i class="fa-solid fa-code text-purple"></i> ConversationFrame Data Schema</h4>
+            <pre class="code-block"><code>class ConversationFrame:
+    intent: str            # e.g. 'KNOWLEDGE', 'IR', 'GREETING'
+    entity: str            # Active entity (e.g. 'Python')
+    attribute: str         # Active attribute (e.g. 'creator')
+    previous_entity: str   # Entity from turn t-1
+    previous_question: str # User query from turn t-1
+    previous_answer: str   # Bot answer from turn t-1
+    context: dict          # Additional metadata
+    timestamp: float       # Epoch timestamp
+    history: list          # Full session turn history</code></pre>
+        </div>
+
+        <div class="card p-4">
+            <h4><i class="fa-solid fa-comments-dollar text-success"></i> Example Dialogue Resolution</h4>
+            <div class="dialogue-example-box">
+                <div class="turn-box">
+                    <span class="turn-user">User: "What is Python?"</span>
+                    <span class="turn-bot">Bot: "Python is a high-level programming language..."</span>
+                    <span class="turn-meta">&rarr; Frame Entity set to <strong>"Python"</strong></span>
+                </div>
+                <div class="turn-box mt-3">
+                    <span class="turn-user">User: "Who created it?"</span>
+                    <span class="turn-bot">Bot: "Python was created by Guido van Rossum."</span>
+                    <span class="turn-meta">&rarr; Coreference resolved: "it" &rarr; <strong>"Python"</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

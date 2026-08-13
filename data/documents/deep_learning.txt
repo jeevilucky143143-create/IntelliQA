@@ -1,0 +1,7 @@
+Deep learning is a subset of machine learning based on artificial neural networks with multiple layers of representation. Deep learning models learn complex representation hierarchies from unstructured inputs like images, text, and audio.
+
+Popular open-source deep learning frameworks include PyTorch, developed by Meta AI in 2016, and TensorFlow, released by Google Brain in 2015. These frameworks provide automatic differentiation, GPU acceleration, and modular neural network layers.
+
+Neural network architectures vary by modality. Convolutional Neural Networks (CNNs) process spatial grid data like images. Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks process sequential data.
+
+The Transformer architecture, introduced by Vaswani et al. in 2017 with the paper Attention Is All You Need, replaced recurrent structures with self-attention mechanisms, powering modern Large Language Models (LLMs) like GPT-4 and BERT.

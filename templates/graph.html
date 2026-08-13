@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Knowledge Graph — IntelliQA{% endblock %}
+{% block page_title %}Interactive Knowledge Graph{% endblock %}
+
+{% block content %}
+<div class="graph-container">
+    <div class="card p-4 mb-4">
+        <div class="row-between">
+            <div>
+                <h3><i class="fa-solid fa-diagram-project text-primary"></i> NetworkX Knowledge Graph</h3>
+                <p class="text-muted">Visualizing entity-attribute relationships extracted from the structured database.</p>
+            </div>
+            <div class="graph-legend">
+                <span class="legend-item"><span class="legend-dot entity-dot"></span> Entity Node</span>
+                <span class="legend-item"><span class="legend-dot value-dot"></span> Attribute Value</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Network Graph Canvas Card -->
+    <div class="card p-0 overflow-hidden">
+        <div id="network-graph" style="height: 600px; width: 100%; background: #FAF8F5;"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+{% endblock %}

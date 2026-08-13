@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}QA Chat — IntelliQA{% endblock %}
+{% block page_title %}Interactive QA & Chatbot{% endblock %}
+
+{% block content %}
+<div class="chat-wrapper">
+    <!-- Chat Header & Demo Examples Bar -->
+    <div class="chat-header-bar">
+        <div class="chat-title">
+            <i class="fa-solid fa-comments text-accent"></i>
+            <span>IntelliQA Conversation Session</span>
+        </div>
+        <div class="chat-actions">
+            <button id="btn-clear-chat" class="btn btn-sm btn-outline-danger" title="Clear conversation context">
+                <i class="fa-solid fa-trash-can"></i> Clear Context
+            </button>
+        </div>
+    </div>
+
+    <!-- Demo Question Chips Bar -->
+    <div class="demo-chips-bar">
+        <span class="chips-label"><i class="fa-solid fa-lightbulb"></i> Try Example Questions:</span>
+        <div class="chips-container">
+            <button class="demo-chip" data-question="What is artificial intelligence?">What is artificial intelligence?</button>
+            <button class="demo-chip" data-question="Who created Khan Academy?">Who created Khan Academy?</button>
+            <button class="demo-chip" data-question="What type of platform is Coursera?">What type of platform is Coursera?</button>
+            <button class="demo-chip" data-question="What is STEM education?">What is STEM education?</button>
+            <button class="demo-chip" data-question="Who created Python?">Who created Python?</button>
+            <button class="demo-chip" data-question="What type of framework is Flask?">What type of framework is Flask?</button>
+            <button class="demo-chip" data-question="Who created it?">Who created it? (Context)</button>
+            <button class="demo-chip" data-question="Hello">Hello</button>
+        </div>
+    </div>
+
+    <!-- Message Stream -->
+    <div class="chat-messages" id="chat-messages">
+        <!-- Initial Welcome Message -->
+        <div class="message-row bot-row">
+            <div class="bot-avatar">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <div class="message-bubble bot-bubble">
+                    <p>Hello! I am <strong>IntelliQA</strong>, your intelligent question answering assistant. You can ask me factoid questions from unstructured documents, structured knowledge queries, or have a conversation with me.</p>
+                </div>
+                <div class="message-meta">
+                    <span class="mode-tag tag-dialogue">[ DIALOGUE ]</span>
+                    <span class="source-tag"><i class="fa-solid fa-server"></i> System Ready</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <span class="typing-text">IntelliQA is retrieving answer...</span>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form id="chat-form" class="chat-input-area">
+        <input type="text" id="user-input" class="chat-input" placeholder="Ask a question (e.g. 'What is machine learning?' or 'Who created Python?')..." autocomplete="off" required>
+        <button type="submit" id="btn-send" class="btn btn-primary btn-send">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

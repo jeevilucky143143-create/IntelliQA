@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — IntelliQA{% endblock %}
+{% block page_title %}Overview Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-hero">
+    <div class="hero-content">
+        <span class="hero-tag"><i class="fa-solid fa-sparkles"></i> Academic AI QA Prototype</span>
+        <h1 class="hero-title">IntelliQA Assistant</h1>
+        <p class="hero-subtitle">Intelligent Information Retrieval, Knowledge-Based Question Answering & Conversational Assistant powered by Python Flask.</p>
+        <div class="hero-actions">
+            <a href="{{ url_for('qa.chat') }}" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-message"></i> Open QA Chat
+            </a>
+            <a href="{{ url_for('evaluation.evaluation') }}" class="btn btn-secondary btn-lg">
+                <i class="fa-solid fa-chart-pie"></i> View Evaluation Dashboard
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Live Metrics Grid -->
+<div class="stats-grid mt-4">
+    <div class="stat-card pastel-blue">
+        <div class="stat-icon">
+            <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <div class="stat-details">
+            <span class="stat-value" id="stat-docs">--</span>
+            <span class="stat-label">Documents Indexed</span>
+        </div>
+    </div>
+
+    <div class="stat-card pastel-purple">
+        <div class="stat-icon">
+            <i class="fa-solid fa-paragraph"></i>
+        </div>
+        <div class="stat-details">
+            <span class="stat-value" id="stat-passages">--</span>
+            <span class="stat-label">Total Passages</span>
+        </div>
+    </div>
+
+    <div class="stat-card pastel-pink">
+        <div class="stat-icon">
+            <i class="fa-solid fa-database"></i>
+        </div>
+        <div class="stat-details">
+            <span class="stat-value" id="stat-records">--</span>
+            <span class="stat-label">Knowledge Records</span>
+        </div>
+    </div>
+
+    <div class="stat-card pastel-yellow">
+        <div class="stat-icon">
+            <i class="fa-solid fa-circle-question"></i>
+        </div>
+        <div class="stat-details">
+            <span class="stat-value" id="stat-questions">--</span>
+            <span class="stat-label">Questions Answered</span>
+        </div>
+    </div>
+
+    <div class="stat-card pastel-green">
+        <div class="stat-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="stat-details">
+            <span class="stat-value" id="stat-confidence">--%</span>
+            <span class="stat-label">Average Confidence</span>
+        </div>
+    </div>
+</div>
+
+<!-- Architecture Feature Cards -->
+<div class="section-title mt-5">
+    <h2>Core QA Capabilities</h2>
+    <p>IntelliQA automatically routes questions across three specialized engines</p>
+</div>
+
+<div class="cards-grid">
+    <div class="feature-card">
+        <div class="card-badge badge-ir">[ MODE 1 ]</div>
+        <div class="card-icon icon-blue">
+            <i class="fa-solid fa-magnifying-glass-doc"></i>
+        </div>
+        <h3>IR-Based Factoid QA</h3>
+        <p>Searches unstructured text documents (.txt, .pdf, .csv) using TF-IDF vectorization and Cosine Similarity to extract concise answers and supporting passages.</p>
+        <ul class="card-list">
+            <li><i class="fa-solid fa-check"></i> TF-IDF & Cosine Similarity</li>
+            <li><i class="fa-solid fa-check"></i> Passage Extraction & Ranking</li>
+            <li><i class="fa-solid fa-check"></i> Document Source Attribution</li>
+        </ul>
+        <a href="{{ url_for('document.documents') }}" class="card-link">Manage Documents &rarr;</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="card-badge badge-kb">[ MODE 2 ]</div>
+        <div class="card-icon icon-purple">
+            <i class="fa-solid fa-cubes"></i>
+        </div>
+        <h3>Knowledge-Based QA</h3>
+        <p>Queries structured Entity-Attribute-Value databases and CSV stores. Visualizes relationships via a dynamic NetworkX knowledge graph.</p>
+        <ul class="card-list">
+            <li><i class="fa-solid fa-check"></i> SQLite & Pandas CSV Engine</li>
+            <li><i class="fa-solid fa-check"></i> Entity & Attribute Detection</li>
+            <li><i class="fa-solid fa-check"></i> NetworkX Knowledge Graph</li>
+        </ul>
+        <a href="{{ url_for('knowledge.knowledge') }}" class="card-link">Explore Knowledge Base &rarr;</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="card-badge badge-dialogue">[ MODE 3 ]</div>
+        <div class="card-icon icon-pink">
+            <i class="fa-solid fa-user-gear"></i>
+        </div>
+        <h3>Dialogue Manager</h3>
+        <p>Maintains multi-turn conversation frames, tracking entity state and resolving contextual pronouns like "it", "its creator", or "that technology".</p>
+        <ul class="card-list">
+            <li><i class="fa-solid fa-check"></i> Session Conversation Frame</li>
+            <li><i class="fa-solid fa-check"></i> Coreference Resolution ("it", "that")</li>
+            <li><i class="fa-solid fa-check"></i> Small Talk & Chitchat Handler</li>
+        </ul>
+        <a href="{{ url_for('main.dialogue') }}" class="card-link">Inspect Dialogue Flow &rarr;</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('/api/stats')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('stat-docs').innerText = data.documents_indexed;
+                document.getElementById('stat-passages').innerText = data.total_passages;
+                document.getElementById('stat-records').innerText = data.knowledge_records;
+                document.getElementById('stat-questions').innerText = data.questions_answered;
+                document.getElementById('stat-confidence').innerText = Math.round(data.average_confidence * 100) + '%';
+            })
+            .catch(err => console.error('Error loading stats:', err));
+    });
+</script>
+{% endblock %}

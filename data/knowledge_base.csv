@@ -1,0 +1,111 @@
+entity,attribute,value,category,description,source
+Python,creator,Guido van Rossum,Technology,High-level programming language created in 1991,knowledge_base.csv
+Python,release_year,1991,Technology,First official public release year,knowledge_base.csv
+Python,type,Programming Language,Technology,General-purpose interpreted language,knowledge_base.csv
+Python,license,PSF License,Technology,Open source Python Software Foundation license,knowledge_base.csv
+Flask,creator,Armin Ronacher,Technology,Created as part of Pocoo project,knowledge_base.csv
+Flask,release_year,2010,Technology,First released in April 2010,knowledge_base.csv
+Flask,type,Web Framework,Technology,Micro web framework written in Python,knowledge_base.csv
+Flask,license,BSD License,Technology,Open source BSD license,knowledge_base.csv
+Flask,written_in,Python,Technology,Built using Python programming language,knowledge_base.csv
+Flask,template_engine,Jinja2,Technology,Template rendering engine used by Flask,knowledge_base.csv
+Flask,wsgi_toolkit,Werkzeug,Technology,WSGI utility library for Flask,knowledge_base.csv
+Django,type,Web Framework,Technology,High-level Python web framework,knowledge_base.csv
+Django,release_year,2005,Technology,First released in July 2005,knowledge_base.csv
+Artificial Intelligence,coined_by,John McCarthy,Technology,Term coined at Dartmouth Workshop in 1956,knowledge_base.csv
+Artificial Intelligence,birth_year,1956,Technology,Dartmouth Workshop conference year,knowledge_base.csv
+Machine Learning,type,AI Subfield,Technology,Data-driven statistical learning subfield,knowledge_base.csv
+Scikit-Learn,type,Machine Learning Library,Technology,Python ML package for classification and regression,knowledge_base.csv
+SQLite,type,Database Engine,Technology,Self-contained serverless SQL database,knowledge_base.csv
+NLTK,type,NLP Library,Technology,Natural Language Toolkit for Python,knowledge_base.csv
+spaCy,type,NLP Library,Technology,Industrial-strength natural language processing library,knowledge_base.csv
+IntelliQA,developer,DeepMind Team,Project,Intelligent Question Answering & Chatbot System,knowledge_base.csv
+IntelliQA,backend_framework,Flask,Project,Built using Flask web framework,knowledge_base.csv
+Khan Academy,creator,Sal Khan,Education,Non-profit educational organization founded in 2008,knowledge_base.csv
+Khan Academy,release_year,2008,Education,Founded in 2008 by Sal Khan,knowledge_base.csv
+Khan Academy,type,Educational Platform,Education,Free online learning platform for students,knowledge_base.csv
+Khan Academy,location,Mountain View California,Education,Headquartered in Mountain View California,knowledge_base.csv
+Coursera,creator,Andrew Ng,Education,Online learning platform founded by Stanford professors,knowledge_base.csv
+Coursera,release_year,2012,Education,Launched in 2012 by Andrew Ng and Daphne Koller,knowledge_base.csv
+Coursera,type,Online Learning Platform,Education,Massive open online course provider,knowledge_base.csv
+Coursera,location,Mountain View California,Education,Headquartered in Mountain View California,knowledge_base.csv
+edX,creator,MIT and Harvard,Education,MOOC provider founded by MIT and Harvard University,knowledge_base.csv
+edX,release_year,2012,Education,Founded in May 2012,knowledge_base.csv
+edX,type,MOOC Platform,Education,Open online course provider,knowledge_base.csv
+Harvard University,type,University,Education,Private Ivy League research university,knowledge_base.csv
+Harvard University,release_year,1636,Education,Established in 1636,knowledge_base.csv
+Harvard University,location,Cambridge Massachusetts,Education,Located in Cambridge Massachusetts,knowledge_base.csv
+Stanford University,type,University,Education,Private research university in California,knowledge_base.csv
+Stanford University,release_year,1885,Education,Founded in 1885 by Leland and Jane Stanford,knowledge_base.csv
+Stanford University,location,Stanford California,Education,Located in Stanford California,knowledge_base.csv
+MIT,type,Research University,Education,Massachusetts Institute of Technology,knowledge_base.csv
+MIT,release_year,1861,Education,Founded in 1861,knowledge_base.csv
+MIT,location,Cambridge Massachusetts,Education,Located in Cambridge Massachusetts,knowledge_base.csv
+Oxford University,type,Research University,Education,Oldest university in the English-speaking world,knowledge_base.csv
+Oxford University,release_year,1096,Education,Teaching evidence dates back to 1096,knowledge_base.csv
+Oxford University,location,Oxford England,Education,Located in Oxford England,knowledge_base.csv
+Duolingo,creator,Luis von Ahn,Education,Language learning platform founded in 2011,knowledge_base.csv
+Duolingo,release_year,2011,Education,Launched in November 2011,knowledge_base.csv
+Duolingo,type,Language Learning Platform,Education,Gamified mobile language learning app,knowledge_base.csv
+Udemy,creator,Eren Bali,Education,Online learning and teaching marketplace,knowledge_base.csv
+Udemy,release_year,2010,Education,Founded in May 2010,knowledge_base.csv
+Udemy,type,Online Learning Platform,Education,Global destination for learning and teaching online,knowledge_base.csv
+Bloom's Taxonomy,creator,Benjamin Bloom,Education,Hierarchical model of educational learning objectives,knowledge_base.csv
+Bloom's Taxonomy,release_year,1956,Education,Published in 1956 by Benjamin Bloom,knowledge_base.csv
+Bloom's Taxonomy,type,Pedagogical Framework,Education,Classification of cognitive educational goals,knowledge_base.csv
+STEM Education,type,Educational Framework,Education,Interdisciplinary curriculum in science technology engineering mathematics,knowledge_base.csv
+Distance Learning,type,Educational Method,Education,Remote instruction and e-learning model,knowledge_base.csv
+Natural Language Processing,type,AI Subfield,Technology,Interdisciplinary field focusing on human computer language interaction,knowledge_base.csv
+BERT,creator,Google AI,Technology,Pretrained bidirectional transformer model released in 2018,knowledge_base.csv
+BERT,release_year,2018,Technology,Released in 2018 by Google AI researchers,knowledge_base.csv
+BERT,type,Language Representation Model,Technology,Deep bidirectional transformer language model,knowledge_base.csv
+GPT-4,creator,OpenAI,Technology,Large multimodal generative language model,knowledge_base.csv
+GPT-4,release_year,2023,Technology,Released in March 2023 by OpenAI,knowledge_base.csv
+GPT-4,type,Multimodal Language Model,Technology,Generative artificial intelligence language model,knowledge_base.csv
+Transformer,creator,Vaswani et al,Technology,Attention mechanism neural architecture proposed in 2017,knowledge_base.csv
+Transformer,release_year,2017,Technology,Introduced in Attention Is All You Need paper in 2017,knowledge_base.csv
+Transformer,type,Deep Learning Architecture,Technology,Attention-based sequence to sequence model,knowledge_base.csv
+DeepMind,creator,Demis Hassabis,Technology,Leading artificial intelligence research laboratory,knowledge_base.csv
+DeepMind,release_year,2010,Technology,Founded in London in September 2010,knowledge_base.csv
+DeepMind,type,AI Research Lab,Technology,Acquired by Google in 2014,knowledge_base.csv
+DeepMind,location,London England,Technology,Headquartered in London United Kingdom,knowledge_base.csv
+OpenAI,creator,Sam Altman,Technology,Artificial intelligence research laboratory,knowledge_base.csv
+OpenAI,release_year,2015,Technology,Founded in December 2015,knowledge_base.csv
+OpenAI,type,AI Research Organization,Technology,Creator of ChatGPT and GPT-4,knowledge_base.csv
+OpenAI,location,San Francisco California,Technology,Headquartered in San Francisco California,knowledge_base.csv
+Turing Test,creator,Alan Turing,Technology,Benchmark test of machine ability to exhibit intelligent behavior,knowledge_base.csv
+Turing Test,release_year,1950,Technology,Proposed in Computing Machinery and Intelligence in 1950,knowledge_base.csv
+Turing Test,type,Machine Intelligence Test,Technology,Evaluates whether a computer can imitate human responses,knowledge_base.csv
+Deep Learning,type,Machine Learning Paradigm,Technology,Subset of machine learning based on artificial neural networks,knowledge_base.csv
+PyTorch,creator,Meta AI,Technology,Open source deep learning framework based on Torch library,knowledge_base.csv
+PyTorch,release_year,2016,Technology,First released in September 2016,knowledge_base.csv
+PyTorch,type,Deep Learning Framework,Technology,Widely used deep learning library in Python,knowledge_base.csv
+TensorFlow,creator,Google Brain,Technology,End-to-end open source platform for machine learning,knowledge_base.csv
+TensorFlow,release_year,2015,Technology,Released under Apache License in November 2015,knowledge_base.csv
+TensorFlow,type,Machine Learning Framework,Technology,Symbolic math library for machine learning,knowledge_base.csv
+Quantum Computing,type,Advanced Computing Paradigm,Technology,Computation using quantum mechanical phenomena like superposition and entanglement,knowledge_base.csv
+Qiskit,creator,IBM,Technology,Open source software development kit for working with quantum computers,knowledge_base.csv
+Qiskit,release_year,2017,Technology,Released by IBM in 2017,knowledge_base.csv
+Qiskit,type,Quantum Software SDK,Technology,Python SDK for circuit-level quantum programs,knowledge_base.csv
+IBM Quantum,creator,IBM,Technology,Cloud-based quantum computing services platform,knowledge_base.csv
+IBM Quantum,release_year,2016,Technology,Launched in May 2016,knowledge_base.csv
+IBM Quantum,type,Quantum Computing Platform,Technology,Provides cloud access to superconducting quantum processors,knowledge_base.csv
+IBM Quantum,location,Armonk New York,Technology,Headquartered in Armonk New York,knowledge_base.csv
+Qubit,type,Basic Quantum Information Unit,Technology,Quantum bit capable of superposition state,knowledge_base.csv
+Computer Vision,type,AI Subfield,Technology,Field of AI enabling computers to derive meaningful information from digital images,knowledge_base.csv
+OpenCV,creator,Intel,Technology,Open source computer vision and machine learning software library,knowledge_base.csv
+OpenCV,release_year,2000,Technology,Initially released by Intel in June 2000,knowledge_base.csv
+OpenCV,type,Computer Vision Library,Technology,Cross-platform real-time computer vision library,knowledge_base.csv
+YOLO,creator,Joseph Redmon,Technology,You Only Look Once real-time object detection system,knowledge_base.csv
+YOLO,release_year,2016,Technology,First published in 2016 CVPR paper,knowledge_base.csv
+YOLO,type,Real-Time Object Detection System,Technology,Single neural network object detector,knowledge_base.csv
+Data Security,type,Information Security Field,Technology,Practice of protecting digital information from unauthorized access,knowledge_base.csv
+Differential Privacy,creator,Cynthia Dwork,Technology,Mathematical definition for privacy-preserving data analysis,knowledge_base.csv
+Differential Privacy,release_year,2006,Technology,Formalized by Cynthia Dwork in 2006,knowledge_base.csv
+Differential Privacy,type,Privacy Preserving Framework,Technology,Guarantees statistical privacy for individual dataset entries,knowledge_base.csv
+Homomorphic Encryption,creator,Craig Gentry,Technology,Form of encryption allowing computation directly on ciphertexts,knowledge_base.csv
+Homomorphic Encryption,release_year,2009,Technology,First fully homomorphic scheme constructed by Craig Gentry in 2009,knowledge_base.csv
+Homomorphic Encryption,type,Cryptographic Encryption Scheme,Technology,Enables secure cloud computation without decryption,knowledge_base.csv
+GDPR,release_year,2018,Technology,General Data Protection Regulation enacted in May 2018,knowledge_base.csv
+GDPR,type,Data Protection Regulation,Technology,European legal framework for data privacy and protection,knowledge_base.csv
+GDPR,location,European Union,Technology,Enforced across European Union member states,knowledge_base.csv

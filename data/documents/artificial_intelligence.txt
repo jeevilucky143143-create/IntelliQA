@@ -1,0 +1,9 @@
+Artificial Intelligence (AI) is a domain of computer science dedicated to building machines capable of performing tasks that typically require human intelligence. These tasks include visual perception, speech recognition, decision-making, and language translation.
+
+The history of artificial intelligence dates back to ancient myths, but modern AI research officially began in 1956 at the Dartmouth Workshop. Pioneer scientists like John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon coined the term artificial intelligence and laid the foundation for machine learning and symbolic reasoning.
+
+AI techniques are broadly categorized into symbolic AI and sub-symbolic or statistical AI. Symbolic AI focuses on logic-based rules and expert systems, while sub-symbolic AI emphasizes neural networks, deep learning, and statistical pattern recognition.
+
+Modern applications of artificial intelligence encompass autonomous vehicles, medical diagnosis systems, natural language processing, gaming bots, intelligent robotics, and generative AI models. AI systems operate by analyzing massive datasets, identifying hidden patterns, and continuously optimizing algorithms to improve accuracy over time.
+
+Ethical considerations in artificial intelligence include algorithmic bias, data privacy, accountability, job displacement, and transparency. As AI systems become more ubiquitous, researchers and policymakers are establishing guidelines for trustworthy, fair, and safe AI development.

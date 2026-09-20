@@ -952,3 +952,28 @@ body {
     .main-content { margin-left: 80px; }
     .cards-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* Factoid Answer Highlight Box */
+.factoid-result-box {
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.08) 0%, rgba(114, 9, 183, 0.05) 100%);
+    border-left: 4px solid #4361ee;
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.factoid-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #4361ee;
+    margin-bottom: 2px;
+}
+
+.factoid-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+

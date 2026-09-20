@@ -154,4 +154,4 @@ pytest tests/ -v
 
 ## Limitations & Future Enhancements
 - Current entity coreference resolution uses rule-based heuristic patterns; deep neural coreference resolution (e.g. AllenNLP) can be integrated for longer multi-entity narratives.
-- Optional Hugging Face / OpenAI adapter can be enabled by specifying API keys in `.env`.
+- Optional Grok / Hugging Face adapter can be enabled by specifying API keys in `.env`.

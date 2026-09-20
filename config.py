@@ -3,7 +3,7 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'intelliqa-secret-key-super-secure-2026')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     DATA_DIR = os.path.join(BASE_DIR, 'data')
     DOCUMENTS_DIR = os.path.join(DATA_DIR, 'documents')
     KNOWLEDGE_BASE_CSV = os.path.join(DATA_DIR, 'knowledge_base.csv')
@@ -14,6 +14,6 @@ class Config:
     ALLOWED_EXTENSIONS = {'txt', 'pdf', 'csv'}
     
     # LLM Optional Settings
-    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', None)
+    GROK_API_KEY = os.environ.get('GROK_API_KEY', None) or os.environ.get('OPENAI_API_KEY', None)
     HUGGINGFACE_API_KEY = os.environ.get('HUGGINGFACE_API_KEY', None)
     USE_TRANSFORMERS_FALLBACK = True

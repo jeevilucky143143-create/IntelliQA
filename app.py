@@ -1,5 +1,13 @@
 import os
+try:
+    from dotenv import load_dotenv
+except ImportError:  # pragma: no cover - optional dependency for local dev setup
+    def load_dotenv():
+        return False
 from flask import Flask, render_template, jsonify
+
+load_dotenv()
+
 from config import Config
 from core.document_loader import DocumentLoader
 from core.ir_engine import IREngine
@@ -36,7 +44,10 @@ def create_app(config_class=Config):
     app.knowledge_engine = KnowledgeEngine(app.config['DATABASE_PATH'], app.config['KNOWLEDGE_BASE_CSV'])
     app.dialogue_manager = DialogueManager()
     app.answer_extractor = AnswerExtractor()
-    app.llm_adapter = LLMAdapter(app.config['OPENAI_API_KEY'])
+    app.llm_adapter = LLMAdapter(
+        grok_api_key=app.config['GROK_API_KEY'],
+        huggingface_api_key=app.config['HUGGINGFACE_API_KEY']
+    )
 
     # Build initial IR TF-IDF index from documents
     passages = app.document_loader.load_all_documents()

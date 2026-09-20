@@ -77,25 +77,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const confidencePct = Math.round((data.confidence || 0.85) * 100);
         const sourceName = data.source || 'system';
 
-        let passageHtml = '';
-        if (data.passage) {
-            passageHtml = `
-                <div class="passage-card">
-                    <strong><i class="fa-solid fa-quote-left"></i> Relevant Passage:</strong> "${escapeHtml(data.passage)}"
+        // Format main answer presentation
+        const mainAnswer = escapeHtml(data.answer || '');
+        const isFactoid = data.answer && (data.answer.includes(':') || data.confidence >= 0.85);
+
+        let answerHtml = `<p class="main-answer-text"><strong>${mainAnswer}</strong></p>`;
+        if (isFactoid && data.answer && data.answer.includes(':')) {
+            const parts = data.answer.split(':');
+            const label = parts[0].trim();
+            const val = parts.slice(1).join(':').trim();
+            answerHtml = `
+                <div class="factoid-result-box">
+                    <div class="factoid-label">${escapeHtml(label)}</div>
+                    <div class="factoid-value">${escapeHtml(val)}</div>
                 </div>
             `;
         }
 
         let explanationHtml = '';
-        if (data.search_explanation) {
-            const exp = data.search_explanation;
+        if (data.search_explanation || data.passage) {
+            const exp = data.search_explanation || {};
+            const passageText = data.passage || exp.relevant_passage || '';
+            
             explanationHtml = `
-                <details class="explanation-details">
-                    <summary class="explanation-summary"><i class="fa-solid fa-circle-nodes"></i> How IntelliQA found this answer ▼</summary>
+                <details class="explanation-details mt-2">
+                    <summary class="explanation-summary"><i class="fa-solid fa-circle-nodes text-accent"></i> How IntelliQA found this answer ▼</summary>
                     <div class="explanation-body">
-                        <div><strong>Search Query:</strong> ${escapeHtml(exp.query || '')}</div>
-                        <div><strong>Extracted Answer:</strong> ${escapeHtml(exp.extracted_answer || '')}</div>
-                        ${exp.similarity_scores ? `<div><strong>Top Passage Scores:</strong> ${exp.similarity_scores.join(', ')}</div>` : ''}
+                        <div><strong><i class="fa-solid fa-file-lines"></i> Source Document:</strong> ${escapeHtml(exp.retrieved_document || sourceName)}</div>
+                        ${exp.matched_attribute ? `<div><strong><i class="fa-solid fa-tag"></i> Matched Attribute:</strong> ${escapeHtml(exp.matched_attribute)}</div>` : ''}
+                        ${exp.extracted_value ? `<div><strong><i class="fa-solid fa-key"></i> Extracted Value:</strong> ${escapeHtml(exp.extracted_value)}</div>` : ''}
+                        ${exp.extraction_method ? `<div><strong><i class="fa-solid fa-gear"></i> Extraction Method:</strong> ${escapeHtml(exp.extraction_method)}</div>` : ''}
+                        ${exp.confidence_reasoning ? `<div><strong><i class="fa-solid fa-brain"></i> Reasoning:</strong> ${escapeHtml(exp.confidence_reasoning)}</div>` : ''}
+                        ${passageText ? `
+                            <div class="passage-card mt-2">
+                                <strong><i class="fa-solid fa-quote-left"></i> Relevant Passage:</strong> "${escapeHtml(passageText)}"
+                            </div>
+                        ` : ''}
+                        ${exp.similarity_scores ? `<div><small class="text-muted">TF-IDF Similarity Scores: ${exp.similarity_scores.join(', ')}</small></div>` : ''}
                     </div>
                 </details>
             `;
@@ -105,8 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
             <div class="message-content">
                 <div class="message-bubble bot-bubble">
-                    <p>${escapeHtml(data.answer || '')}</p>
-                    ${passageHtml}
+                    ${answerHtml}
                     ${explanationHtml}
                 </div>
                 <div class="message-meta">

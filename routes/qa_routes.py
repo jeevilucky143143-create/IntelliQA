@@ -66,7 +66,10 @@ def process_ask_query(query: str, session_data: dict) -> dict:
             }
         else:
             # Fallback to IR search on resolved query
-            passages = ir_engine.search(resolved_q, top_k=3)
+            exp_q = answer_extractor.expand_query_with_synonyms(resolved_q)
+            passages = ir_engine.search(exp_q, top_k=10)
+            if not passages:
+                passages = ir_engine.search(resolved_q, top_k=3)
             extracted = answer_extractor.extract_answer(resolved_q, passages)
             result = {
                 'answer': extracted['answer'],
@@ -96,7 +99,10 @@ def process_ask_query(query: str, session_data: dict) -> dict:
             }
         else:
             # Fallback to IR if KB missed exact entity attribute
-            passages = ir_engine.search(query, top_k=3)
+            exp_q = answer_extractor.expand_query_with_synonyms(query)
+            passages = ir_engine.search(exp_q, top_k=10)
+            if not passages:
+                passages = ir_engine.search(query, top_k=3)
             extracted = answer_extractor.extract_answer(query, passages)
             result = {
                 'answer': extracted['answer'],
@@ -111,7 +117,10 @@ def process_ask_query(query: str, session_data: dict) -> dict:
 
     # 4. Handle IR-based QA (Default)
     else:
-        passages = ir_engine.search(query, top_k=3)
+        exp_q = answer_extractor.expand_query_with_synonyms(query)
+        passages = ir_engine.search(exp_q, top_k=10)
+        if not passages:
+            passages = ir_engine.search(query, top_k=3)
         extracted = answer_extractor.extract_answer(query, passages)
         result = {
             'answer': extracted['answer'],

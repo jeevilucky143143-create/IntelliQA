@@ -19,10 +19,30 @@ STOPWORDS = {
 }
 
 def clean_text(text: str) -> str:
-    """Clean text by removing excessive whitespace and standardizing quotes."""
+    """Clean text by standardizing whitespace, camel-case boundaries, and quotes while protecting email addresses."""
     if not text:
         return ""
     text = text.replace('\r', ' ').replace('\n', ' ')
+
+    # 1. Protect email addresses from digit-word boundary splitting
+    emails = []
+    def save_email(m):
+        emails.append(m.group(0))
+        return f'__EMAIL_{len(emails)-1}__'
+
+    text = re.sub(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', save_email, text)
+
+    # 2. Insert space between lower-case and UPPER-case (e.g. BangaloreCGPA -> Bangalore CGPA)
+    text = re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
+    # Insert space between letter and digit (e.g. College2023 -> College 2023)
+    text = re.sub(r'([a-zA-Z])(\d)', r'\1 \2', text)
+    # Insert space between digit and non-ordinal letter (e.g. 2023Pre -> 2023 Pre)
+    text = re.sub(r'(\d+)(?!(?:st|nd|rd|th)\b)([a-zA-Z])', r'\1 \2', text, flags=re.IGNORECASE)
+
+    # 3. Restore email addresses intact
+    for i, email in enumerate(emails):
+        text = text.replace(f'__EMAIL_{i}__', email)
+
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
